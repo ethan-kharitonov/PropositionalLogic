@@ -1,33 +1,26 @@
-﻿using Core.Formulas;
-using Core.Formulas.Conjunctions;
-using Core.Formulas.Disjunctions;
+﻿using Core.Formulas.Basic;
+using Core.Formulas.Conjunctions.ILiteralConjunctions;
+using Core.Formulas.Disjunctions.IAndClauseDisjunctions;
 using Core.TruthAssignments;
-using System.ComponentModel;
-using System.Net.Http.Headers;
 
-namespace Core
+namespace Core.ExtensionMethods
 {
     public static class FormulaExtensions
     {
-        public static Not Not(this IFormula f) => new(f);
-        public static And And(this IFormula A, IFormula B) => new(A, B);
-        public static And And(this IFormula A, string B) => new(A, new Atom(B));
-        public static Or Or(this IFormula A, IFormula B) => new(A, B);
-        public static Or Or(this IFormula A, string B) => new(A, new Atom(B));
 
         public static bool SyntacticEquals(this IFormula A, IFormula B)
         {
-            if(A is ILiteral litA && B is ILiteral litB)
+            if (A is ILiteral litA && B is ILiteral litB)
             {
-               return litA.IsPositive == litB.IsPositive && litA.Symbol == litB.Symbol;
+                return litA.IsPositive == litB.IsPositive && litA.Symbol == litB.Symbol;
             }
 
-            if(A is Not notA && B is Not notB)
+            if (A is Not notA && B is Not notB)
             {
                 return notA.A.SyntacticEquals(notB.A);
             }
 
-            if(A is And andA && B is And andB)
+            if (A is And andA && B is And andB)
             {
                 return andA.A.SyntacticEquals(andB.A) && andA.B.SyntacticEquals(andB.B);
             }
@@ -70,24 +63,24 @@ namespace Core
 
             return IAndClauseDisjunction.Build(andClauses.ToArray());
         }
-       /* public static IClauseConjunction GetEquivilandCNF(this IFormula f)
-        {
-            if(f is ILiteral lit)
-            {
-                return lit;
-            }
+        /* public static IClauseConjunction GetEquivilandCNF(this IFormula f)
+         {
+             if(f is ILiteral lit)
+             {
+                 return lit;
+             }
 
-            if(f is And)
-            {
-                return 
-            }
-        }*/
+             if(f is And)
+             {
+                 return 
+             }
+         }*/
 
         public static IEnumerable<FiniteAtomTruthAssignment> GetAllPossibleTruthAssignments(IFormula f)
         {
             var symbols = f.GetSymbols().ToArray();
 
-            foreach(var set in symbols.GetAllSubcollections())
+            foreach (var set in symbols.GetAllSubcollections())
             {
                 yield return new FiniteAtomTruthAssignment(set.ToArray());
             }

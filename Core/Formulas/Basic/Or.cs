@@ -1,5 +1,7 @@
-﻿using Core.TruthAssignments;
-namespace Core.Formulas
+﻿using Core.ExtensionMethods;
+using Core.TruthAssignments;
+
+namespace Core.Formulas.Basic
 {
     public class Or : IFormula
     {

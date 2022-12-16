@@ -1,6 +1,6 @@
 ﻿using Core.TruthAssignments;
 
-namespace Core.Formulas
+namespace Core.Formulas.Basic
 {
     public class And : IFormula
     {

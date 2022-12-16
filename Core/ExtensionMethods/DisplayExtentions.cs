@@ -1,6 +1,7 @@
 ﻿using Core.Formulas;
+using Core.Formulas.Basic;
 
-namespace Core
+namespace Core.ExtensionMethods
 {
     public static class DisplayExtentions
     {

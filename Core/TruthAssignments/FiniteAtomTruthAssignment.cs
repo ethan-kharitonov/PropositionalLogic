@@ -1,4 +1,6 @@
 ﻿using Core.Formulas;
+using Core.Formulas.Basic;
+
 namespace Core.TruthAssignments
 {
     public class FiniteAtomTruthAssignment : ITruthAssignment

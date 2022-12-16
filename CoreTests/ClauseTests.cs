@@ -1,6 +1,9 @@
 using Core;
+using Core.ExtensionMethods;
 using Core.Formulas;
+using Core.Formulas.Basic;
 using Core.Formulas.Disjunctions;
+using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 
 namespace CoreTests
 {

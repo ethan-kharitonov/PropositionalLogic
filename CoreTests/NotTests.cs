@@ -1,5 +1,8 @@
 ﻿using Core;
+using Core.ExtensionMethods;
 using Core.Formulas;
+using Core.Formulas.Basic;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace CoreTests
 {
@@ -76,12 +79,13 @@ namespace CoreTests
         [Fact]
         public void RemoveDoubleNegationIfExists_ThreeNots_OneNotLeft()
         {
-            var f = new Atom("P1").Not().Not().Not();
+            var P = new Atom("P1");
 
+            var f = P.Not().Not().Not();
             var s = f.RemoveDoubleNegationIfExists();
-            var not = Assert.IsType<Not>(s);
-
-            Assert.IsType<Atom>(not.A);
+            var expected = P.Not();
+            
+            Assert.True(s.SyntacticEquals(expected));
         }
 
         [Fact]

@@ -2,7 +2,7 @@
 using Core.TruthAssignments;
 using System.ComponentModel;
 
-namespace Core.Formulas
+namespace Core.Formulas.Basic
 {
     public class Atom : ILiteral
     {
@@ -44,7 +44,6 @@ namespace Core.Formulas
         {
             yield return Symbol;
         }
-        public IClause[] GetClauses() => new[] { this };
 
     }
 }

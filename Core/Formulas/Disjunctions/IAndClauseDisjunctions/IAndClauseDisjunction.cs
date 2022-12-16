@@ -1,6 +1,8 @@
-﻿using Core.Formulas.Conjunctions;
+﻿using Core.Formulas.Basic;
+using Core.Formulas.Conjunctions;
+using Core.Formulas.Conjunctions.ILiteralConjunctions;
 
-namespace Core.Formulas.Disjunctions
+namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
     public interface IAndClauseDisjunction : IFormula
     {

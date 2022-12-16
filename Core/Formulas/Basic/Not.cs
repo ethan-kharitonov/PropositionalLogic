@@ -1,6 +1,7 @@
-﻿using Core.TruthAssignments;
+﻿using Core.ExtensionMethods;
+using Core.TruthAssignments;
 
-namespace Core.Formulas
+namespace Core.Formulas.Basic
 {
     public class Not : IFormula
     {

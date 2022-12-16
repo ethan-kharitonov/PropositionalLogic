@@ -1,4 +1,6 @@
-﻿using Core.Formulas.Disjunctions;
+﻿using Core.Formulas.Conjunctions.IClauseConjunctions;
+using Core.Formulas.Conjunctions.ILiteralConjunctions;
+using Core.Formulas.Disjunctions;
 using Core.TruthAssignments;
 
 namespace Core.Formulas.Conjunctions
@@ -10,7 +12,6 @@ namespace Core.Formulas.Conjunctions
         private EmptyConjunction() { }
         public bool Evaluate(ITruthAssignment T) => true;
 
-        public IClause[] GetClauses() => Array.Empty<IClause>();
 
         public IEnumerable<string> GetSymbols() => Enumerable.Empty<string>();
     }

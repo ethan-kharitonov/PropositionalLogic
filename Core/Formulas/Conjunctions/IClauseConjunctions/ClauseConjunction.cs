@@ -1,6 +1,7 @@
-﻿using Core.Formulas.Disjunctions;
+﻿using Core.Formulas.Basic;
+using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 
-namespace Core.Formulas.Conjunctions
+namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
     public class ClauseConjunction : And, IClauseConjunction
     {
@@ -21,6 +22,5 @@ namespace Core.Formulas.Conjunctions
             base.A = A;
             base.B = B;
         }
-        public IClause[] GetClauses() => B.GetClauses().Concat(A.GetClauses()).ToArray();
     }
 }

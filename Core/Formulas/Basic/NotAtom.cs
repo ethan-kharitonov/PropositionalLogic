@@ -1,6 +1,6 @@
 ﻿using Core.Formulas.Disjunctions;
 
-namespace Core.Formulas
+namespace Core.Formulas.Basic
 {
     public class NotAtom : Not, ILiteral
     {
@@ -13,7 +13,5 @@ namespace Core.Formulas
         {
             Symbol = symbol;
         }
-
-        public IClause[] GetClauses() => new[] { this };
     }
 }

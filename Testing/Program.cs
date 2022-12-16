@@ -1,6 +1,5 @@
-﻿using Core;
-using Core.Formulas;
-using Core.Formulas.Conjunctions;
+﻿using Core.ExtensionMethods;
+using Core.Formulas.Basic;
 
 internal class Program
 {

@@ -1,0 +1,43 @@
+﻿using Core.TruthAssignments;
+
+namespace Core.Formulas
+{
+    public class Not : IFormula
+    {
+        public readonly IFormula A;
+        public Not(IFormula A)
+        {
+            this.A = A;
+        }
+
+        public Not(string A)
+        {
+            this.A = new Atom(A);
+        }
+
+        public bool Evaluate(ITruthAssignment T) => !A.Evaluate(T);
+
+        public IEnumerable<string> GetSymbols() => A.GetSymbols();
+
+        public IFormula PushNegationInside()
+        {
+            if (A is And and)
+            {
+                var p = and.A.Not().RemoveDoubleNegationIfExists();
+                var q = and.B.Not().RemoveDoubleNegationIfExists();
+                return p.Or(q);
+            }
+
+            if (A is Or or)
+            {
+                var p = or.A.Not().RemoveDoubleNegationIfExists();
+                var q = or.B.Not().RemoveDoubleNegationIfExists();
+                return p.And(q);
+            }
+
+            return this;
+        }
+
+        public IFormula RemoveDoubleNegationIfExists() => A is Not inner ? inner.A : this;
+    }
+}

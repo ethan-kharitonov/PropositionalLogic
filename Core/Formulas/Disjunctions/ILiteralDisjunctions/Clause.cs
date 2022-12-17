@@ -16,7 +16,7 @@ namespace Core.Formulas.Disjunctions.ILiteralDisjunctions
                 throw new ArgumentException($"Cannot create {nameof(Clause)} instance with one literals");
             }
 
-            A = (INonEmptyClause)IClause.BuildClause(nonEmptyClauses[..^1]);
+            A = (INonEmptyClause)IClause.Build(nonEmptyClauses[..^1]);
             B = nonEmptyClauses[^1];
 
             base.B = B;

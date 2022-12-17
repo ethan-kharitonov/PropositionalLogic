@@ -2,7 +2,7 @@
 {
     public interface INonEmptyAndClauseDisjunction : IAndClauseDisjunction
     {
-        public static new IAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
+        public static new INonEmptyAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {
             if (nonEmptyAndClauseDisjunctions.Length == 0)
             {

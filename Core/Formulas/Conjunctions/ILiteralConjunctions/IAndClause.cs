@@ -5,7 +5,7 @@ namespace Core.Formulas.Conjunctions.ILiteralConjunctions
     //Conjunction of literals
     public interface IAndClause : IAndClauseDisjunction
     {
-        public static IAndClause BuildClause(params INonEmptyAndClause[] nonEmptyAndClauses)
+        public static IAndClause Build(params INonEmptyAndClause[] nonEmptyAndClauses)
         {
             if (nonEmptyAndClauses.Length == 0)
             {

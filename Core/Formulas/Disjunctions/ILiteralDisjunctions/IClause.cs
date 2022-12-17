@@ -6,7 +6,7 @@ namespace Core.Formulas.Disjunctions.ILiteralDisjunctions
     //Disjunction of literls
     public interface IClause : IClauseConjunction
     {
-        public static IClause BuildClause(INonEmptyClause[] nonEmptyClauses)
+        public static IClause Build(INonEmptyClause[] nonEmptyClauses)
         {
             if (nonEmptyClauses.Length == 0)
             {

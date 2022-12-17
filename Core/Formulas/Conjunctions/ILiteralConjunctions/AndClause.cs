@@ -17,7 +17,7 @@ namespace Core.Formulas.Conjunctions.ILiteralConjunctions
                 throw new ArgumentException($"Cannot create {nameof(AndClause)} instance with one literals");
             }
 
-            A = (INonEmptyAndClause)IAndClause.BuildClause(nonEmptyAndClauses[..^1]);
+            A = INonEmptyAndClause.Build(nonEmptyAndClauses[..^1]);
             B = nonEmptyAndClauses[^1];
 
             base.B = B;

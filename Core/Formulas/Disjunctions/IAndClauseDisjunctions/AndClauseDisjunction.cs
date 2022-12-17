@@ -15,7 +15,7 @@ namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
                 throw new ArgumentException($"Cannot create {nameof(AndClauseDisjunction)} instance with one literals");
             }
 
-            A = (INonEmptyAndClauseDisjunction)INonEmptyAndClauseDisjunction.Build(nonEmptyAndClauseDisjunctions[..^1]);
+            A = INonEmptyAndClauseDisjunction.Build(nonEmptyAndClauseDisjunctions[..^1]);
             B = nonEmptyAndClauseDisjunctions[^1];
 
             base.A = A;

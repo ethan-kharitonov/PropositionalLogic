@@ -1,5 +1,6 @@
-﻿using Core.Formulas;
-using Core.Formulas.Basic;
+﻿using Core.Formulas.Basic;
+using Core.Formulas.Conjunctions;
+using Core.Formulas.Disjunctions;
 
 namespace Core.ExtensionMethods
 {
@@ -15,6 +16,8 @@ namespace Core.ExtensionMethods
             And and => $"({and.A.ToLatex()} {LatexAnd} {and.B.ToLatex()})",
             Or or => $"({or.A.ToLatex()} {LatexOr} {or.B.ToLatex()})",
             Atom a => a.Symbol,
+            EmptyConjunction => @"\land \emptyset",
+            EmptyDisjunction => @"\lor \emptyset",
             _ => throw new NotImplementedException(),
         };
     }

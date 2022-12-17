@@ -13,7 +13,7 @@ namespace CoreTests
         public void BuildClause_SinglePositiveLiteral_Createsliteral()
         {
             var P = new Atom("P1");
-            var clause = IClause.BuildClause(new ILiteral[] { P });
+            var clause = IClause.Build(new ILiteral[] { P });
 
             Assert.True(clause.SyntacticEquals(P));
 
@@ -23,7 +23,7 @@ namespace CoreTests
         public void BuildClause_SingleNegativeLiteral_CreatesLiteral()
         {
             var P = new NotAtom("P1");
-            var clause = IClause.BuildClause(new ILiteral[] { P });
+            var clause = IClause.Build(new ILiteral[] { P });
 
             Assert.True(clause.SyntacticEquals(P));
         }
@@ -34,7 +34,7 @@ namespace CoreTests
             var P = new NotAtom("P1");
             var Q = new Atom("P2");
 
-            var clause = IClause.BuildClause(new ILiteral[] { P, Q });
+            var clause = IClause.Build(new ILiteral[] { P, Q });
             var expected = P.Or(Q);
 
             Assert.True(clause.SyntacticEquals(expected));
@@ -47,7 +47,7 @@ namespace CoreTests
             var Q = new Atom("P2");
             var R = new Atom("P3");
 
-            var clause = IClause.BuildClause(new ILiteral[] { P, Q, R });
+            var clause = IClause.Build(new ILiteral[] { P, Q, R });
             var expected = P.Or(Q).Or(R);
 
             Assert.True(clause.SyntacticEquals(expected));

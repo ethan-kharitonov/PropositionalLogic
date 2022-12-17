@@ -3,21 +3,21 @@ using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 
 namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
-    public class ClauseConjunction : And, IClauseConjunction
+    public class ClauseConjunction : And, INonEmptyClauseConjunction
     {
-        public new readonly IClause A;
-        public new readonly IClauseConjunction B;
+        public new readonly INonEmptyClauseConjunction A;
+        public new readonly INonEmptyClauseConjunction B;
 
 
-        public ClauseConjunction(IClause[] clauses) : base(default(IFormula), default)
+        public ClauseConjunction(INonEmptyClauseConjunction[] nonEmptyClausesConjunctions) : base(default(IFormula), default)
         {
-            if (clauses.Length < 2)
+            if (nonEmptyClausesConjunctions.Length < 2)
             {
                 throw new ArgumentException($"Cannot create {nameof(ClauseConjunction)} instance with one literals");
             }
 
-            A = clauses[0];
-            B = IClauseConjunction.Build(clauses[1..]);
+            A = (INonEmptyClauseConjunction)IClauseConjunction.Build(nonEmptyClausesConjunctions[..^1]);
+            B = nonEmptyClausesConjunctions[^1];
 
             base.A = A;
             base.B = B;

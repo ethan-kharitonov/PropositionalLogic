@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Formulas.Conjunctions.ILiteralConjunctions
 {
-    public interface INonEmptyAndClause : IAndClause
+    public interface INonEmptyAndClause : IAndClause, INonEmptyAndClauseDisjunction
     {
     }
 }

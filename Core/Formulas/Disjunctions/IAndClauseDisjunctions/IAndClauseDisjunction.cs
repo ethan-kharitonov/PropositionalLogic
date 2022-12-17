@@ -1,24 +1,23 @@
 ﻿using Core.Formulas.Basic;
-using Core.Formulas.Conjunctions;
 using Core.Formulas.Conjunctions.ILiteralConjunctions;
 
 namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
     public interface IAndClauseDisjunction : IFormula
     {
-        public static IAndClauseDisjunction Build(IAndClause[] clauses)
+        public static IAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {
-            if (clauses.Length == 0)
+            if (nonEmptyAndClauseDisjunctions.Length == 0)
             {
                 return EmptyDisjunction.Instance;
             }
 
-            if (clauses.Length == 1)
+            if (nonEmptyAndClauseDisjunctions.Length == 1)
             {
-                return clauses[0];
+                return nonEmptyAndClauseDisjunctions[0];
             }
 
-            return new AndClauseDisjunction(clauses);
+            return new AndClauseDisjunction(nonEmptyAndClauseDisjunctions);
         }
     }
 }

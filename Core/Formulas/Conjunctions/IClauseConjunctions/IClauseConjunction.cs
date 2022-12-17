@@ -6,19 +6,19 @@ namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
     public interface IClauseConjunction :  IFormula
     {
-        public static IClauseConjunction Build(params IClause[] clauses)
+        public static IClauseConjunction Build(params INonEmptyClauseConjunction[] nonEmptyClausesConjunctions)
         {
-            if (clauses.Length == 0)
+            if (nonEmptyClausesConjunctions.Length == 0)
             {
                 return EmptyConjunction.Instance;
             }
 
-            if (clauses.Length == 1)
+            if (nonEmptyClausesConjunctions.Length == 1)
             {
-                return clauses[0];
+                return nonEmptyClausesConjunctions[0];
             }
 
-            return new ClauseConjunction(clauses);
+            return new ClauseConjunction(nonEmptyClausesConjunctions);
         }
 
     }

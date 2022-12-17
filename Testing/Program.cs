@@ -1,7 +1,7 @@
 ﻿using Core.ExtensionMethods;
 using Core.Formulas.Basic;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {

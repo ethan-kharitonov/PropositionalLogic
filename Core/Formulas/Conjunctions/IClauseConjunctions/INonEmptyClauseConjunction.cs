@@ -1,6 +1,8 @@
-﻿namespace Core.Formulas.Conjunctions.IClauseConjunctions
+﻿using Core.Formulas.Basic;
+
+namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
-    public interface INonEmptyClauseConjunction : IClauseConjunction
+    public interface INonEmptyClauseConjunction : IClauseConjunction, IFormula
     {
         public static new INonEmptyClauseConjunction Build(params INonEmptyClauseConjunction[] nonEmptyClausesConjunctions)
         {

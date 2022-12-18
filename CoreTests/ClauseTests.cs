@@ -34,7 +34,8 @@ namespace CoreTests
             var P = new NotAtom("P1");
             var Q = new Atom("P2");
 
-            var clause = IClause.Build(new ILiteral[] { P, Q });
+            var clause = IClause.Build(P, Q );
+
             var expected = P.Or(Q);
 
             Assert.True(clause.SyntacticEquals(expected));

@@ -1,6 +1,4 @@
-﻿using Core;
-using Core.ExtensionMethods;
-using Core.Formulas;
+﻿using Core.ExtensionMethods;
 using Core.Formulas.Basic;
 
 namespace CoreTests

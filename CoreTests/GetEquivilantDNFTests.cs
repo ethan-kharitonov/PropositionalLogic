@@ -14,9 +14,7 @@ namespace CoreTests
             var f = P.And(P.Not());
 
             var result = f.GetEquivilantDNF();
-            var expected = EmptyDisjunction.Instance;
-
-            Assert.True(result.SyntacticEquals(expected));
+            Assert.Equal(result, EmptyDisjunction.Instance);
         }
     }
 }

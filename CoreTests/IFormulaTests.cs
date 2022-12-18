@@ -9,20 +9,6 @@ namespace CoreTests
     public class IFormulaTests
     {
         [Fact]
-        public void GetSymbols_EmptyConjunction_ReturnsEmptyIEnumerable()
-        {
-            var result = EmptyConjunction.Instance.GetSymbols();
-            Assert.Empty(result);
-        }
-
-        [Fact]
-        public void GetSymbols_EmptyDisjunction_ReturnsEmptyIEnumerable()
-        {
-            var result = EmptyDisjunction.Instance.GetSymbols();
-            Assert.Empty(result);
-        }
-
-        [Fact]
         public void GetSymbols_RandomFormula_ReturnsEmptyIEnumerable()
         {
             var P = new Atom("P1");
@@ -33,20 +19,6 @@ namespace CoreTests
             var result = f.GetSymbols().ToArray();
             var expected = new[] { "P1", "P2", "P3" };
             Assert.Equal(result, expected);
-        }
-
-        [Fact]
-        public void Evalueate_EmptyConjunction_ReturnsTrue()
-        {
-            var result = EmptyConjunction.Instance.Evaluate(new FiniteAtomTruthAssignment(Array.Empty<string>()));
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void Evalueate_EmptyDisjucntion_ReturnsFalse()
-        {
-            var result = EmptyDisjunction.Instance.Evaluate(new FiniteAtomTruthAssignment());
-            Assert.False(result);
         }
 
         [Fact]

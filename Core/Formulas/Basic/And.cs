@@ -23,4 +23,28 @@ namespace Core.Formulas.Basic
         public IEnumerable<string> GetSymbols() => A.GetSymbols().Union(B.GetSymbols());
 
     }
+
+    public class And<T> : And where T : IFormula
+    {
+        public new T A
+        {
+            get => (T)base.A;
+            set
+            {
+                base.A = value;
+            }
+        }
+        public new T B
+        {
+            get => (T)base.B;
+            set
+            {
+                base.B = value;
+            }
+        }
+        public And(T A, T B) : base(A, B)
+        {
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ namespace Core.TruthAssignments
     public class FiniteAtomTruthAssignment : ITruthAssignment
     {
         public readonly string[] trueSymbols;
-        public FiniteAtomTruthAssignment(string[] trueSymbols)
+        public FiniteAtomTruthAssignment(params string[] trueSymbols)
         {
             this.trueSymbols = trueSymbols;
         }

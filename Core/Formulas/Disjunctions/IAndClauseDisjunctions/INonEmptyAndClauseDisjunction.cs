@@ -1,6 +1,8 @@
-﻿namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
+﻿using Core.Formulas.Basic;
+
+namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
-    public interface INonEmptyAndClauseDisjunction : IAndClauseDisjunction
+    public interface INonEmptyAndClauseDisjunction : IAndClauseDisjunction, IFormula
     {
         public static new INonEmptyAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {

@@ -5,14 +5,12 @@ using Core.TruthAssignments;
 
 namespace Core.Formulas.Conjunctions
 {
-    public class EmptyConjunction : IAndClause, IClauseConjunction
+    public class EmptyConjunction : IClauseConjunction
     {
         public static readonly EmptyConjunction Instance = new();
 
         private EmptyConjunction() { }
-        public bool Evaluate(ITruthAssignment T) => true;
 
-
-        public IEnumerable<string> GetSymbols() => Enumerable.Empty<string>();
+        public bool Value = true;
     }
 }

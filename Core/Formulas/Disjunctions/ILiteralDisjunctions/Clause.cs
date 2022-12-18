@@ -2,25 +2,17 @@
 
 namespace Core.Formulas.Disjunctions.ILiteralDisjunctions
 {
-    //Disjunction of two ro more literls (or the empty clause)
-    public class Clause : Or, INonEmptyClause
+    public class Clause : Or<IClause>, IClause
     {
-        public new INonEmptyClause A;
-        public new INonEmptyClause B;
-
-        //Literals must contain at least two items
-        public Clause(INonEmptyClause[] nonEmptyClauses) : base(default(IFormula), default)
+        public Clause(params IClause[] nonEmptyClauses) : base(default, default)
         {
             if (nonEmptyClauses.Length < 2)
             {
                 throw new ArgumentException($"Cannot create {nameof(Clause)} instance with one literals");
             }
 
-            A = INonEmptyClause.Build(nonEmptyClauses[..^1]);
+            A = IClause.Build(nonEmptyClauses[..^1]);
             B = nonEmptyClauses[^1];
-
-            base.B = B;
-            base.A = A;
         }
 
     }

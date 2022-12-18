@@ -4,21 +4,21 @@ using Core.Formulas.Conjunctions.IClauseConjunctions;
 namespace Core.Formulas.Disjunctions.ILiteralDisjunctions
 {
     //Disjunction of literls
-    public interface IClause : IClauseConjunction
+    public interface IClause : INonEmptyClauseConjunction
     {
-        public static IClause Build(INonEmptyClause[] nonEmptyClauses)
+        public static IClause Build(params IClause[] clauses)
         {
-            if (nonEmptyClauses.Length == 0)
+            if (clauses.Length == 0)
             {
-                return EmptyDisjunction.Instance;
+                throw new ArgumentException($"Cannot create an instance of type {nameof(IClause)} from an empty array");
             }
 
-            if (nonEmptyClauses.Length == 1)
+            if (clauses.Length == 1)
             {
-                return nonEmptyClauses[0];
+                return clauses[0];
             }
 
-            return new Clause(nonEmptyClauses);
+            return new Clause(clauses);
         }
     }
 

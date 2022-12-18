@@ -2,22 +2,21 @@
 
 namespace Core.Formulas.Conjunctions.ILiteralConjunctions
 {
-    //Conjunction of literals
-    public interface IAndClause : IAndClauseDisjunction
+    public interface IAndClause : INonEmptyAndClauseDisjunction
     {
-        public static IAndClause Build(params INonEmptyAndClause[] nonEmptyAndClauses)
+        public static IAndClause Build(params IAndClause[] andClauses)
         {
-            if (nonEmptyAndClauses.Length == 0)
+            if (andClauses.Length == 0)
             {
-                return EmptyConjunction.Instance;
+                throw new ArgumentException($"Cannot create instance of {nameof(IAndClause)} from an empty array");
             }
 
-            if (nonEmptyAndClauses.Length == 1)
+            if (andClauses.Length == 1)
             {
-                return nonEmptyAndClauses[0];
+                return andClauses[0];
             }
 
-            return new AndClause(nonEmptyAndClauses);
+            return new AndClause(andClauses);
         }
     }
 }

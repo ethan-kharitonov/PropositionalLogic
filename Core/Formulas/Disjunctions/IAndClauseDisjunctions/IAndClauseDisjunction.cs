@@ -3,7 +3,7 @@ using Core.Formulas.Conjunctions.ILiteralConjunctions;
 
 namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
-    public interface IAndClauseDisjunction : IFormula
+    public interface IAndClauseDisjunction : IFormulaOrEmpty
     {
         public static IAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {

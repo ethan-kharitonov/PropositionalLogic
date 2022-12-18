@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Core.Formulas.Basic.And" Collapsed="true">
-    <Position X="6.75" Y="7.5" Width="1.5" />
+    <Position X="2" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAFAAAA=</HashCode>
       <FileName>Formulas\Basic\And.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Core.Formulas.Basic.And&lt;T&gt;" Collapsed="true">
+    <Position X="2" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Formulas\Basic\And.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Core.Formulas.Basic.Atom" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAgAAACAAQAAAAAAAAABACAA=</HashCode>
       <FileName>Formulas\Basic\Atom.cs</FileName>
@@ -17,7 +24,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Core.Formulas.Basic.Not" Collapsed="true">
-    <Position X="9.5" Y="4.5" Width="1.5" />
+    <Position X="5.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAgAAAAAAACAAAAAAIABAAAA=</HashCode>
       <FileName>Formulas\Basic\Not.cs</FileName>
@@ -25,7 +32,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Core.Formulas.Basic.NotAtom" Collapsed="true">
-    <Position X="9.5" Y="5.75" Width="1.5" />
+    <Position X="5.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAA=</HashCode>
       <FileName>Formulas\Basic\NotAtom.cs</FileName>
@@ -33,129 +40,123 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Core.Formulas.Basic.Or" Collapsed="true">
-    <Position X="1.75" Y="7.5" Width="1.5" />
+    <Position X="8" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAFAgAA=</HashCode>
       <FileName>Formulas\Basic\Or.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Core.Formulas.Conjunctions.EmptyConjunction" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.75" Y="0.5" Width="1.5" />
+  <Class Name="Core.Formulas.Basic.Or&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Formulas\Basic\Or.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Formulas.Conjunctions.EmptyConjunction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAAA=</HashCode>
       <FileName>Formulas\Conjunctions\EmptyConjunction.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Core.Formulas.Conjunctions.IClauseConjunctions.ClauseConjunction" Collapsed="true">
-    <Position X="5.5" Y="8.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
-      <FileName>Formulas\Conjunctions\IClauseConjunctions\ClauseConjunction.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Core.Formulas.Conjunctions.ILiteralConjunctions.AndClause" Collapsed="true">
-    <Position X="7.75" Y="8.75" Width="1.5" />
+    <Position X="3" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Conjunctions\ILiteralConjunctions\AndClause.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Core.Formulas.Disjunctions.EmptyDisjunction" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="1.5" Width="1.5" />
+  <Class Name="Core.Formulas.Conjunctions.IClauseConjunctions.NonEmptyClauseConjunction" Collapsed="true">
+    <Position X="0.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formulas\Conjunctions\IClauseConjunctions\NonEmptyClauseConjunction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Core.Formulas.Disjunctions.EmptyDisjunction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAAA=</HashCode>
       <FileName>Formulas\Disjunctions\EmptyDisjunction.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Core.Formulas.Disjunctions.IAndClauseDisjunctions.AndClauseDisjunction" Collapsed="true">
-    <Position X="2.75" Y="8.75" Width="1.5" />
+    <Position X="9" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Disjunctions\IAndClauseDisjunctions\AndClauseDisjunction.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Core.Formulas.Disjunctions.ILiteralDisjunctions.Clause" Collapsed="true">
-    <Position X="0.5" Y="8.75" Width="1.5" />
+    <Position X="6.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Disjunctions\ILiteralDisjunctions\Clause.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Core.Formulas.Basic.IFormula" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Formulas\Basic\IFormula.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Core.Formulas.Basic.ILiteral" Collapsed="true">
-    <Position X="4" Y="6.25" Width="1.5" />
+    <Position X="4" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAA=</HashCode>
       <FileName>Formulas\Basic\ILiteral.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Core.Formulas.Conjunctions.ILiteralConjunctions.IAndClause" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formulas\Conjunctions\ILiteralConjunctions\IAndClause.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="Core.Formulas.Conjunctions.IClauseConjunctions.IClauseConjunction" Collapsed="true">
-    <Position X="1.75" Y="1.75" Width="1.5" />
+    <Position X="9" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Conjunctions\IClauseConjunctions\IClauseConjunction.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Core.Formulas.Conjunctions.IClauseConjunctions.INonEmptyClauseConjunction" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="2" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Conjunctions\IClauseConjunctions\INonEmptyClauseConjunction.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Core.Formulas.Conjunctions.ILiteralConjunctions.IAndClause" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Formulas\Conjunctions\ILiteralConjunctions\IAndClause.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Core.Formulas.Conjunctions.ILiteralConjunctions.INonEmptyAndClause" Collapsed="true">
-    <Position X="6.25" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Formulas\Conjunctions\ILiteralConjunctions\INonEmptyAndClause.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Core.Formulas.Conjunctions.ILiteralConjunctions.INonEmptyAndClauseDisjunction" Collapsed="true">
-    <Position X="7.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Formulas\Conjunctions\ILiteralConjunctions\INonEmptyAndClauseDisjunction.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="Core.Formulas.Disjunctions.IAndClauseDisjunctions.IAndClauseDisjunction" Collapsed="true">
-    <Position X="6.25" Y="1.75" Width="1.5" />
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Formulas\Disjunctions\IAndClauseDisjunctions\IAndClauseDisjunction.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Core.Formulas.Disjunctions.ILiteralDisjunctions.IClause" Collapsed="true">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+  <Interface Name="Core.Formulas.Disjunctions.IAndClauseDisjunctions.INonEmptyAndClauseDisjunction" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Formulas\Disjunctions\ILiteralDisjunctions\IClause.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formulas\Disjunctions\IAndClauseDisjunctions\INonEmptyAndClauseDisjunction.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Core.Formulas.Disjunctions.ILiteralDisjunctions.INonEmptyClause" Collapsed="true">
-    <Position X="1.75" Y="4.75" Width="1.5" />
+  <Interface Name="Core.Formulas.Disjunctions.ILiteralDisjunctions.IClause" Collapsed="true">
+    <Position X="2" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Formulas\Disjunctions\ILiteralDisjunctions\INonEmptyClause.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formulas\Disjunctions\ILiteralDisjunctions\IClause.cs</FileName>
+      <NewMemberFileName>Formulas\Disjunctions\ILiteralDisjunctions\INonEmptyClause.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

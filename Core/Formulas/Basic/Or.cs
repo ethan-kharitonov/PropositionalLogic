@@ -40,4 +40,27 @@ namespace Core.Formulas.Basic
             return this;
         }
     }
+
+    public class Or<T> : Or where T : IFormula
+    {
+        public new T A
+        {
+            get => (T)base.A;
+            set
+            {
+                base.A = value;
+            }
+        }
+        public new T B
+        {
+            get => (T)base.B;
+            set
+            {
+                base.B = value;
+            }
+        }
+        public Or(T A, T B) : base(A, B)
+        {
+        }
+    }
 }

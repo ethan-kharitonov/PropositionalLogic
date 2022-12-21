@@ -1,8 +1,11 @@
 ﻿using Core.Formulas.Basic;
+using Core.Formulas.Conjunctions.IClauseConjunctions;
 using Core.Formulas.Conjunctions.ILiteralConjunctions;
 using Core.Formulas.Disjunctions;
 using Core.Formulas.Disjunctions.IAndClauseDisjunctions;
+using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 using Core.TruthAssignments;
+using System.Net.Http.Headers;
 
 namespace Core.ExtensionMethods
 {
@@ -45,21 +48,56 @@ namespace Core.ExtensionMethods
             return IAndClauseDisjunction.Build(andClauses.ToArray());
         }
 
-       /* public static IClauseConjunction GetEquivilandCNF(this IFormula f)
+        public static IClauseConjunction GetEquivilandCNF(this IFormula f)
         {
-            if (f is ILiteral lit)
+            switch (f)
             {
-                return lit;
+                case ILiteral lit:
+                    return lit;
+                case And and:
+                    var A = (INonEmptyClauseConjunction)GetEquivilandCNF(and.A);
+                    var B = (INonEmptyClauseConjunction)GetEquivilandCNF(and.B);
+                    return INonEmptyClauseConjunction.Build(A, B);
+                case Or or:
+                    return GetCNFForOr(or);
+                case Not not:
+                    return GetCNFForNot(not);
+                default:
+                    throw new NotImplementedException($"Cannot find CNF equivilant for instances of this type");
             }
+        }
 
-            if (f is And and)
+        private static IClauseConjunction GetCNFForOr(Or or)
+        {
+            var d = or.Distribute();
+            if (d == or)
             {
-                var A = GetEquivilandCNF(and.A);
-                var B = GetEquivilandCNF(and.B);
+                if(or.A is ILiteral litA && or.B is ILiteral litB)
+                {
+                    return new Clause(litA, litB);
+                }
 
-                return IClauseConjunction.Build()
+                if(or.A is ILiteral litA1)
+                {
+                    var B = (Or)or.B;
+                    return new Clause(litA1, (Clause)GetCNFForOr(B));
+                }
+
+                var A = (Or)or.A;
+                var B1 = (ILiteral)or.B;
+                return new Clause((Clause)GetCNFForOr(A), B1);
             }
-        }*/
+            return GetEquivilandCNF(d);
+        }
+
+        private static IClauseConjunction GetCNFForNot(Not not) => not.A switch
+        {
+            Atom => (IClause)not,
+            Not => not.RemoveDoubleNegationIfExists().GetEquivilandCNF(),
+            And => not.PushNegationInsideIfPossile().GetEquivilandCNF(),
+            Or => not.PushNegationInsideIfPossile().GetEquivilandCNF(),
+            _ => throw new NotImplementedException(),
+        };
 
         public static IEnumerable<FiniteAtomTruthAssignment> GetAllPossibleTruthAssignments(IFormula f)
         {

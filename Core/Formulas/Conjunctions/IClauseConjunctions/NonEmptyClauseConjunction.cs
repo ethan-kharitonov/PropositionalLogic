@@ -1,7 +1,7 @@
 ﻿using Core.Formulas.Basic;
 namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
-    public class NonEmptyClauseConjunction : And<INonEmptyClauseConjunction>, IClauseConjunction
+    public class NonEmptyClauseConjunction : And<INonEmptyClauseConjunction>, INonEmptyClauseConjunction
     {
         public NonEmptyClauseConjunction(INonEmptyClauseConjunction[] nonEmptyClausesConjunctions) : base(default, default)
         {

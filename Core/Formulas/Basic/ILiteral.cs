@@ -8,5 +8,10 @@ namespace Core.Formulas.Basic
     {
         abstract bool IsPositive { get; }
         abstract string Symbol { get; }
+
+        public bool IsNegationOf(ILiteral literal)
+        {
+            return IsPoisitve != literal.IsPositive && Symbol == literal.Symbol;
+        }
     }
 }

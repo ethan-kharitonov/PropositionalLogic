@@ -1,18 +1,21 @@
 ﻿using Core.ExtensionMethods;
 using Core.Formulas.Basic;
 
-public class Program
+namespace Testing
 {
-    private static void Main(string[] args)
+    public class Program
     {
-        var P = new Atom("P1");
-        var Q = new Atom("P2");
-        var S = new Atom("P3");
+        private static void Main(string[] args)
+        {
+            var P = new Atom("P1");
+            var Q = new Atom("P2");
+            var S = new Atom("P3");
 
-        var f = S.And(Q.Or(S.Not()));
-        var DNF = f.GetEquivilantDNF();
+            var f = P.Or(Q.And(S));
+            var DNF = f.GetEquivilandCNF();
 
-        Console.WriteLine($"f:   {f.ToLatex()}");
-        Console.WriteLine($"DNF: {DNF.ToLatex()}");
+            Console.WriteLine($"f:   {f.ToLatex()}");
+            Console.WriteLine($"DNF: {DNF.ToLatex()}");
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace CoreTests
         public void PushNegationInside_NegatingAndTwoAtoms_ReturnsOrOfNegativeLiterals()
         {
             var f = new Atom("P1").And("P2").Not();
-            var s = f.PushNegationInside();
+            var s = f.PushNegationInsideIfPossile();
 
             var or = Assert.IsType<Or>(s);
 
@@ -27,7 +27,7 @@ namespace CoreTests
         public void PushNegationInside_NegatingOrTwoNotAtoms_ReturnsOrOfNegativeLiterals()
         {
             var f = new NotAtom("P1").Or(new NotAtom("P2")).Not();
-            var s = f.PushNegationInside();
+            var s = f.PushNegationInsideIfPossile();
 
             var or = Assert.IsType<And>(s);
 
@@ -39,7 +39,7 @@ namespace CoreTests
         public void PushNegationInside_NegatingOrTwoAtoms_ReturnsOrOfNegativeLiterals()
         {
             var f = new Atom("P1").Or("P2").Not();
-            var s = f.PushNegationInside();
+            var s = f.PushNegationInsideIfPossile();
 
             var or = Assert.IsType<And>(s);
 
@@ -54,7 +54,7 @@ namespace CoreTests
         public void PushNegationInside_NegatingAndTwoNotAtoms_ReturnsOrOfNegativeLiterals()
         {
             var f = new NotAtom("P1").And(new Not("P2")).Not();
-            var s = f.PushNegationInside();
+            var s = f.PushNegationInsideIfPossile();
 
             var or = Assert.IsType<Or>(s);
 

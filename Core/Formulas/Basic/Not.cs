@@ -20,7 +20,7 @@ namespace Core.Formulas.Basic
 
         public IEnumerable<string> GetSymbols() => A.GetSymbols();
 
-        public IFormula PushNegationInside()
+        public IFormula PushNegationInsideIfPossile()
         {
             if (A is And and)
             {

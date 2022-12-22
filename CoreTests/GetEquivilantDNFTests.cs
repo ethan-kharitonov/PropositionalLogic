@@ -1,6 +1,5 @@
 ﻿using Core.ExtensionMethods;
 using Core.Formulas.Basic;
-using Core.Formulas.Conjunctions;
 using Core.Formulas.Disjunctions;
 
 namespace CoreTests
@@ -14,7 +13,7 @@ namespace CoreTests
             var f = P.And(P.Not());
 
             var result = f.GetEquivilantDNF();
-            Assert.Equal(result, EmptyDisjunction.Instance);
+            Assert.True(result.SyntacticEquals(EmptyDisjunction.Instance));
         }
     }
 }

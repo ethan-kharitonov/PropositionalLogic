@@ -2,7 +2,7 @@
 
 namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
-    public interface INonEmptyAndClauseDisjunction : IAndClauseDisjunction, IFormula
+    public interface INonEmptyAndClauseDisjunction : IAndClauseDisjunction, INonEmptyFormula
     {
         public static new INonEmptyAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {

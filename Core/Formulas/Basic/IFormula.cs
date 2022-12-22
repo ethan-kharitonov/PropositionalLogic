@@ -1,8 +1,9 @@
-﻿using Core.TruthAssignments;
+﻿using Core.ExtensionMethods;
+using Core.TruthAssignments;
 
 namespace Core.Formulas.Basic
 {
-    public interface IFormula : IFormulaOrEmpty
+    public interface IFormula
     {
         public abstract bool Evaluate(ITruthAssignment T);
         public abstract IEnumerable<string> GetSymbols();

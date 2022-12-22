@@ -2,7 +2,7 @@
 
 namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
-    public interface INonEmptyClauseConjunction : IClauseConjunction, IFormula
+    public interface INonEmptyClauseConjunction : IClauseConjunction, INonEmptyFormula
     {
         public static new INonEmptyClauseConjunction Build(params INonEmptyClauseConjunction[] nonEmptyClausesConjunctions)
         {

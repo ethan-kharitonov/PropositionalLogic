@@ -14,7 +14,7 @@ namespace Core.ExtensionMethods
         public const string LatexOr = @"\lor";
         public const string LatexEmptySet = @"\emptyset";
 
-        public static string ToLatex(this IFormulaOrEmpty f) => f switch
+        public static string ToLatex(this IFormula f) => f switch
         {
             Not n => $"{LatexNot} {n.A.ToLatex()}",
             And and => $"({and.A.ToLatex()} {LatexAnd} {and.B.ToLatex()})",

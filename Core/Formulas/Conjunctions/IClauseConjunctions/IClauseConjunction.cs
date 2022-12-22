@@ -1,9 +1,10 @@
 ﻿
 using Core.Formulas.Basic;
+using Core.Formulas.Disjunctions;
 
 namespace Core.Formulas.Conjunctions.IClauseConjunctions
 {
-    public interface IClauseConjunction : IFormulaOrEmpty
+    public interface IClauseConjunction : IFormula
     {
         public static IClauseConjunction Build(params INonEmptyClauseConjunction[] nonEmptyClausesConjunctions)
         {

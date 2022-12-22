@@ -4,14 +4,14 @@ using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 
 namespace Core.Formulas.Basic
 {
-    public interface ILiteral : IClause, IAndClause
+    public interface ILiteral : INonEmptyClause, INonEmptyAndClause
     {
         abstract bool IsPositive { get; }
         abstract string Symbol { get; }
 
         public bool IsNegationOf(ILiteral literal)
         {
-            return IsPoisitve != literal.IsPositive && Symbol == literal.Symbol;
+            return IsPositive != literal.IsPositive && Symbol == literal.Symbol;
         }
     }
 }

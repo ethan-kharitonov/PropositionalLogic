@@ -1,11 +1,11 @@
 ﻿using Core.Formulas.Basic;
+using Core.Formulas.Conjunctions;
 using Core.Formulas.Conjunctions.IClauseConjunctions;
 using Core.Formulas.Conjunctions.ILiteralConjunctions;
 using Core.Formulas.Disjunctions;
 using Core.Formulas.Disjunctions.IAndClauseDisjunctions;
 using Core.Formulas.Disjunctions.ILiteralDisjunctions;
 using Core.TruthAssignments;
-using System.Net.Http.Headers;
 
 namespace Core.ExtensionMethods
 {
@@ -22,7 +22,7 @@ namespace Core.ExtensionMethods
 
             var allSymbols = f.GetSymbols();
 
-            var andClauses = new List<IAndClause>();
+            var andClauses = new List<INonEmptyAndClause>();
             foreach (var t in truthAssignments)
             {
                 if (!f.Evaluate(t))
@@ -42,7 +42,7 @@ namespace Core.ExtensionMethods
                         literals.Add(new NotAtom(symbol));
                     }
                 }
-                andClauses.Add(IAndClause.Build(literals.ToArray()));
+                andClauses.Add(INonEmptyAndClause.Build(literals.ToArray()));
             }
 
             return IAndClauseDisjunction.Build(andClauses.ToArray());

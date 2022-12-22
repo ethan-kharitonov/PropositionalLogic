@@ -2,7 +2,7 @@
 
 namespace Core.Formulas.Basic
 {
-    public class NotAtom : Not, ILiteral
+    public class NotAtom : Not<Atom>, ILiteral
     {
         public bool IsPositive => false;
 
@@ -12,6 +12,11 @@ namespace Core.Formulas.Basic
         public NotAtom(string symbol) : base(new Atom(symbol))
         {
             Symbol = symbol;
+        }
+
+        public NotAtom(Atom atom) : base(atom)
+        {
+            Symbol = atom.Symbol;
         }
     }
 }

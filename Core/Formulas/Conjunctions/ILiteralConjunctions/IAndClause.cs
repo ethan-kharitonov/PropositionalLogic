@@ -1,14 +1,15 @@
-﻿using Core.Formulas.Disjunctions.IAndClauseDisjunctions;
+﻿using Core.Formulas.Disjunctions;
+using Core.Formulas.Disjunctions.IAndClauseDisjunctions;
 
 namespace Core.Formulas.Conjunctions.ILiteralConjunctions
 {
-    public interface IAndClause : INonEmptyAndClauseDisjunction
+    public interface IAndClause : IAndClauseDisjunction
     {
-        public static IAndClause Build(params IAndClause[] andClauses)
+        public static IAndClause Build(params INonEmptyAndClause[] andClauses)
         {
             if (andClauses.Length == 0)
             {
-                throw new ArgumentException($"Cannot create instance of {nameof(IAndClause)} from an empty array");
+                return EmptyConjunction.Instance;
             }
 
             if (andClauses.Length == 1)

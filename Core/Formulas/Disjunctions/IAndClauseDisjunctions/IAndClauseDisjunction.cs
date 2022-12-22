@@ -1,9 +1,8 @@
 ﻿using Core.Formulas.Basic;
-using Core.Formulas.Conjunctions.ILiteralConjunctions;
 
 namespace Core.Formulas.Disjunctions.IAndClauseDisjunctions
 {
-    public interface IAndClauseDisjunction : IFormulaOrEmpty
+    public interface IAndClauseDisjunction : IFormula
     {
         public static IAndClauseDisjunction Build(params INonEmptyAndClauseDisjunction[] nonEmptyAndClauseDisjunctions)
         {

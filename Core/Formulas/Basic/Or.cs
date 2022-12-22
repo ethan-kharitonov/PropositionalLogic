@@ -3,11 +3,11 @@ using Core.TruthAssignments;
 
 namespace Core.Formulas.Basic
 {
-    public class Or : IFormula
+    public class Or : INonEmptyFormula
     {
-        public IFormula A;
-        public IFormula B;
-        public Or(IFormula A, IFormula B)
+        public INonEmptyFormula A;
+        public INonEmptyFormula B;
+        public Or(INonEmptyFormula A, INonEmptyFormula B)
         {
             this.A = A;
             this.B = B;
@@ -23,7 +23,7 @@ namespace Core.Formulas.Basic
 
         public IEnumerable<string> GetSymbols() => A.GetSymbols().Union(B.GetSymbols());
 
-        public IFormula Distribute()
+        public INonEmptyFormula Distribute()
         {
             if (B is And and)
             {
@@ -41,7 +41,7 @@ namespace Core.Formulas.Basic
         }
     }
 
-    public class Or<T> : Or where T : IFormula
+    public class Or<T> : Or where T : INonEmptyFormula
     {
         public new T A
         {

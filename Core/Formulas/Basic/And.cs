@@ -2,11 +2,11 @@
 
 namespace Core.Formulas.Basic
 {
-    public class And : IFormula
+    public class And : INonEmptyFormula
     {
-        public IFormula A;
-        public IFormula B;
-        public And(IFormula A, IFormula B)
+        public INonEmptyFormula A;
+        public INonEmptyFormula B;
+        public And(INonEmptyFormula A, INonEmptyFormula B)
         {
             this.A = A;
             this.B = B;
@@ -24,7 +24,7 @@ namespace Core.Formulas.Basic
 
     }
 
-    public class And<T> : And where T : IFormula
+    public class And<T> : And where T : INonEmptyFormula
     {
         public new T A
         {
@@ -46,5 +46,4 @@ namespace Core.Formulas.Basic
         {
         }
     }
-
 }

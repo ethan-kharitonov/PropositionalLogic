@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core.ExtensionMethods
 {
-    public static class IFormulaOrEmptyExtensions
+    public static class IFormulaExtensions
     {
-        public static bool SyntacticEquals(this IFormulaOrEmpty A, IFormulaOrEmpty B)
+        public static bool SyntacticEquals(this IFormula A, IFormula B)
         {
             if (A == B)
             {

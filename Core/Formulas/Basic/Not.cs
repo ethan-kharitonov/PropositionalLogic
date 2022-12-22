@@ -3,10 +3,10 @@ using Core.TruthAssignments;
 
 namespace Core.Formulas.Basic
 {
-    public class Not : IFormula
+    public class Not : INonEmptyFormula
     {
-        public readonly IFormula A;
-        public Not(IFormula A)
+        public INonEmptyFormula A;
+        public Not(INonEmptyFormula A)
         {
             this.A = A;
         }
@@ -39,6 +39,21 @@ namespace Core.Formulas.Basic
             return this;
         }
 
-        public IFormula RemoveDoubleNegationIfExists() => A is Not inner ? inner.A : this;
+        public INonEmptyFormula RemoveDoubleNegationIfExists() => A is Not inner ? inner.A : this;
+    }
+
+    public class Not<T> : Not where T : INonEmptyFormula
+    {
+        public new T A
+        {
+            get => (T)base.A;
+            set
+            {
+                base.A = value;
+            }
+        }
+        public Not(T A) : base(A)
+        {
+        }
     }
 }
